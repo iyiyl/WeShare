@@ -3,7 +3,7 @@
   "name": "zsshare",
   "repository": {
     "type": "git",
-    "url": "git://github.com/iyiyl/WeShare.git"
+    "url": "https://github.com/iyiyl/WeShare.git"
   },
   "scripts": {
     "start": "roadhog server",
