@@ -1,0 +1,84 @@
+
+.user {
+    cursor: pointer; 
+}
+
+.user_name {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    height: 32px;
+    color:rgb(85, 85, 85);
+    line-height: 32px;
+    margin-left: 12px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+
+.user_name:hover {
+    color:#6f6f6f;
+}
+
+.pop_title {
+    position: relative;
+}
+
+.user_desc {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    height: 32px;
+    line-height: 32px;
+    cursor: auto;
+    margin-left: 12px;
+}
+
+.pop_name {
+    font-size: 16px;
+}
+
+.pop_avatar {
+    width: 72px;
+    height: 72px;
+    position: absolute;
+    top: -30px;
+}
+
+.pop_user {
+    position: relative;
+    display: inline-block;
+    list-style: none;
+    margin-left: 88px;
+}
+
+.pop_desc {
+    font-size: 14px;
+    padding:  6px 0;
+    max-width: 200px;
+}
+
+.pop_info {
+    padding: 8px;
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.data_info {
+    color: #8590a6;
+    padding-bottom: 8px;
+}
+.data_count {
+    font-size: 16px;
+    color: #262626;
+}
+
+.data_info:hover,.data_count:hover {
+    color: #175199;
+}

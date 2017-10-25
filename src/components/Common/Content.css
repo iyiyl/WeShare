@@ -1,0 +1,81 @@
+.btn_link,.btn_plain,.btn_link:hover,.btn_plain:hover {
+    height: auto;
+    font-size: 15px;
+    background-color: transparent;
+    border: none;
+    color: #8590a6;
+    padding-right: 0;
+}
+
+.answer_content {
+    word-break: break-word;
+    white-space: pre-wrap;
+    line-height: 1.67;
+}
+
+.answer_date {
+    margin: 10px 0;
+    color: #8590a6;
+}
+
+.content_switch {
+    color: #175199;
+    cursor: pointer;
+}
+
+.content_switch:hover {
+    color: #6f6f6f;
+}
+
+.answer_brief {
+    margin-top: 9px;
+    overflow: hidden;
+    line-height: 1.67;
+    cursor: pointer;
+    max-height: 100px;
+    font-size: 15px;
+}
+
+.answer_brief:hover {
+    color: #6f6f6f;
+}
+
+.answer_opt {
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: stretch;
+    height: 52px;
+    padding: 0 24px;
+    margin: 0 -24px;
+    color: #555;
+    background: #fff;
+}
+
+.answer_opt_info {
+    margin-bottom: -12px;
+}
+
+.answer_opt_fixed {
+    box-shadow: 0 -1px 3px rgba(0,34,77,.05);
+}
+
+.opt_left {
+    display: flex;
+    align-items: center;
+}
+
+.opt_right {
+    position: absolute;
+    right: 24px;
+    line-height: 52px;
+}
+
+.comment {
+    margin-top: 24px;
+}
+
+.menu {
+    margin: -8px -16px;
+}

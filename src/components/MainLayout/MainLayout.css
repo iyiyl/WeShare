@@ -1,0 +1,17 @@
+
+.normal {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+.content {
+    padding-top: 67px; 
+    display: flex;
+    min-height: 100vh;
+}
+  
+.main {
+    padding: 0 8px;
+    flex: 1 0 auto;
+}

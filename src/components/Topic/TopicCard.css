@@ -1,0 +1,30 @@
+.btn_link,.btn_plain {
+    height: auto;
+    font-size: 15px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    border-radius: 0;
+}
+.card {
+    width: 694px;
+    margin-bottom: 10px;
+    position: relative;
+    background: #fff;
+    overflow: hidden;
+}
+.card_hide{
+    display: none;
+}
+.question_info {
+    margin-top: -12px;
+}
+.question_title {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.6;
+    color: #1e1e1e;
+}
+.extra {
+    color: #9fadc7;
+}

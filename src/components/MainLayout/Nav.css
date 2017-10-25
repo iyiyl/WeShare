@@ -1,0 +1,79 @@
+
+.appNav { 
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+    background-color: #fff;
+    transition: opacity .5s;
+    border-bottom: 1px solid rgba(30,35,42,.06);
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.14), 0px 2px 2px 0px rgba(0, 0, 0, 0.098), 0px 1px 5px 0px rgba(0, 0, 0, 0.084);
+    background-clip: content-box;
+}
+
+.innerNav {
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    height: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 120px;
+    height: 31px;
+    background: #333;
+    border-radius: 6px;
+    margin: 16px 24px 16px 0;
+    float: left;
+  
+}
+
+.search_input {
+    width: 300px;
+}
+
+.search_btn{
+    margin-right: -8px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.avatar {
+    background-color: #fff;
+    color: #9fadc7;
+}
+
+.avatar:hover {
+    background-color: #9fadc7;
+    color: #9fadc7;
+}
+
+.certain_category_search {
+    width: 100%;
+  }
+  
+.certain_category_search_dropdown {
+    color: #666;
+    font-weight: bold;
+    position: fixed;
+}
+  
+.certain_category_search_dropdown .ant-select-dropdown-menu-item-group {
+    border-bottom: 1px solid #F6F6F6;
+}
+
+.certain_search_item_count {
+    position: absolute;
+    color: #999;
+    right: 16px;
+}
+
+.show_all {
+    text-align: center;
+    cursor: default;
+}
+
+

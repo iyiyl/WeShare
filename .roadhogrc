@@ -1,0 +1,47 @@
+{
+  "entry": "src/index.js",
+  "disableCSSModules": false,
+  "publicPath": "/",
+  "theme": {
+    "@font-family-no-number": "Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Noto Sans CJK SC,WenQuanYi Micro Hei,Arial,sans-serif",
+    "@primary-color": "#0f88eb",
+    "@link-color": "#0f88eb",
+    "@border-radius-base": "2px",
+    "@font-size-base": "15px",
+    "@font-size-lg": "15px",
+    "@text-color": "#262626",
+    "@heading-color": "#262626",
+    "@line-height-base": "1.5"
+  },
+  "autoprefixer": null,
+  "proxy": {
+    "/api": {
+      "target": "http://localhost:3001/",
+      "changeOrigin": true,
+      "pathRewrite": {
+        "^/api": ""
+      }
+    }
+  },
+  "extraBabelPlugins": [
+    "transform-runtime",
+    ["import", { "libraryName": "antd", "style": true }]
+  ],
+  "env": {
+    "development": {
+      "extraBabelPlugins": [
+        "dva-hmr"
+      ]
+    }
+  },
+  "xdllPlugin": {
+    "exclude": [
+      "babel-runtime"
+    ],
+    "include": [
+      "dva/router",
+      "dva/saga",
+      "dva/fetch"
+    ]
+  }
+}
