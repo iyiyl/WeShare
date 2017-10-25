@@ -1,34 +1,46 @@
 import React, { Component } from 'react';
-import { Affix, Button, Card } from 'antd';
-import styles from './Comment.css';
-import { Link } from 'dva/router';
-import classNames from 'classnames';
+import { connect } from 'dva';
+import { routerRedux } from 'dva/router';
+import queryString from 'query-string';
+
+import { Affix, Button, Card, Pagination} from "antd";
+import Sort from "./Sort";
 import Reply from "./Reply";
+import styles from "./Comment.css";
 
-export default class Comment extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      sortToggle: true,
-    };
+function Comment({ dispatch, list: dataSource, loading, total, page: current }) {
+
+  const cardTitleNode = <span className={styles.title}>{`${total}条评论`}</span>;
+
+  function pageChangeHandler(page) {
+    dispatch(routerRedux.push({
+      pathname: '/comments',
+      search: queryString.stringify({ page }),
+    }));
   }
 
-  sortSwitch = (e) => {
-    if(e) e.stopPropagation();
-    this.setState({
-      sortToggle: !this.state.sortToggle,
-    });
-  }
-
-  render() {
-    const cardTitleNode = <span className={styles.title}>{`34条评论`}</span>,
-      extraNode = <Button onClick={this.sortSwitch} className={`${styles.extra} ${styles.btn_link}`}>{this.state.sortToggle ? "切换为时间排序" : "切换为默认排序"}</Button>;
-    return (
-      <Card title={cardTitleNode} extra={extraNode}>
-      <Reply />
-      <Reply />
-      <Reply />
-      </Card>
-    );
-  }
+  return (
+    <Card title={cardTitleNode} extra={<Sort />}>
+      {dataSource.map((reply, index) => <Reply  reply={reply} key={reply.id} />)}
+      <Pagination
+          className="ant-table-pagination"
+          total={total}
+          current={current}
+          pageSize={PAGE_SIZE}
+          onChange={pageChangeHandler}
+        />
+    </Card>
+  );
 }
+
+function mapStateToProps(state) {
+  const { list, total, page } = state.comments;
+  return {
+    loading: state.loading.models.comments,
+    list,
+    total,
+    page,
+  };
+}
+
+export default connect(mapStateToProps)(Comment);

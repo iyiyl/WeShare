@@ -1,19 +1,6 @@
-.btn_link,.btn_plain,.btn_link:hover,.btn_plain:hover {
-    height: auto;
-    font-size: 15px;
-    background-color: transparent;
-    border: none;
-    padding-left: 0;
-    padding-right: 0;
-}
+
 .title {
     font-weight: 700;
 }
-.extra,.extra:focus,.extra:active,.extra:visited{
-    color: #175199;
-}
-.extra:hover {
-    color: #0f88eb;
-    border-bottom: solid 1px #0f88eb;
-}
+
 

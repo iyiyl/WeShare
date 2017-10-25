@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { Affix, Avatar, Button, Card, Icon, Tooltip } from 'antd';
-import styles from './TopicCard.css';
 import { Link } from 'dva/router';
 import classNames from 'classnames';
+
 import UserInfo from "../Common/UserInfo";
 import Content from "../Common/Content";
+import styles from './TopicCard.css';
 
 class TopicCard extends Component {
 
@@ -55,7 +56,7 @@ class TopicCard extends Component {
               <span className={styles.question_num}>{`${collectionNum}人收藏`}</span>
             </div>
           </div> */}
-          <UserInfo userData={this.props.record.bestAnswer.author} hasDesc={true}/>
+          <UserInfo userData={this.props.record.bestAnswer.author} hasDesc={true} />
           <Content article={article} />
         </Card>
       </div>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Affix, Avatar, Button, Card, Icon, Tooltip, Menu, Popover } from 'antd';
 import styles from './Content.css';
 import classNames from 'classnames';
-import CommentCard from "../Comment/Comment";
+import Comment from "../Comment/Comment";
 
 export default class Content extends Component {
   constructor(props) {
@@ -108,7 +108,7 @@ export default class Content extends Component {
             )
           }
         </div>
-        {!this.state.commentToggle ? null : (<div className={styles.comment}><CommentCard /></div>)}
+        {!this.state.commentToggle ? null : (<div className={styles.comment}><Comment /></div>)}
       </div>
     );
   }
