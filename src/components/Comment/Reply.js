@@ -27,6 +27,7 @@ export default class Reply extends Component {
     };
 
     const { id, content, create_date, voteup, author } = this.props.reply;
+    
     return (
       <div onMouseOver={this.optToggleSwitch} onMouseOut={this.optToggleSwitch} className={styles.info}>
         <UserInfo userData={author} hasDesc={false}/>

@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Affix, Avatar, Button, Card, Icon, Tooltip, Menu, Popover } from 'antd';
-import styles from './Content.css';
 import classNames from 'classnames';
+import dynamic from 'dva/dynamic';
+
 import Comment from "../Comment/Comment";
+import styles from './Content.css';
 
 export default class Content extends Component {
   constructor(props) {
@@ -74,14 +76,14 @@ export default class Content extends Component {
                 <div className={styles.opt_left}>
                   <Button type="primary" onClick={this.voteup} icon="caret-up">{`${voteup}赞`}</Button>
                   <Button type="primary" icon="caret-down" style={{ "marginLeft": 6 }}></Button>
-                  <Button icon="message" className={styles.btn_plain} onClick={this.commentToggleSwitch} >
+                  <Button icon="message" className={styles.btn_link} onClick={this.commentToggleSwitch} >
                     {this.state.commentToggle ? `收起评论` : `${commentNum} 条评论`}
                   </Button>
-                  <Button icon="star" className={styles.btn_plain} >
+                  <Button icon="star" className={styles.btn_link} >
                     收藏
                   </Button>
                   <Popover content={menu} placement="bottom">
-                    <Button icon="ellipsis" className={styles.btn_plain} ></Button>
+                    <Button icon="ellipsis" className={styles.btn_link} ></Button>
                   </Popover>
                 </div>
                 <Button className={`${styles.btn_plain} ${styles.content_switch} ${styles.opt_right}`} onClick={this.contentToggleSwitch}>
@@ -95,20 +97,28 @@ export default class Content extends Component {
               <div className={`${styles.answer_opt} ${styles.opt_left}`}>
                 <Button type="primary" icon="caret-up">{`${voteup}赞`}</Button>
                 <Button type="primary" icon="caret-down" style={{ "marginLeft": 6 }}></Button>
-                <Button icon="message" className={styles.btn_plain} onClick={this.commentToggleSwitch}>
+                <Button icon="message" className={styles.btn_link} onClick={this.commentToggleSwitch}>
                   {this.state.commentToggle ? `收起评论` : `${commentNum} 条评论`}
                 </Button>
-                <Button icon="star" className={styles.btn_plain} >
+                <Button icon="star" className={styles.btn_link} >
                   收藏
                 </Button>
                 <Popover content={menu} placement="bottom">
-                  <Button icon="ellipsis" className={styles.btn_plain} ></Button>
+                  <Button icon="ellipsis" className={styles.btn_link} ></Button>
                 </Popover>
               </div>
             )
           }
         </div>
-        {!this.state.commentToggle ? null : (<div className={styles.comment}><Comment /></div>)}
+        {!this.state.commentToggle ? null : (<div className={styles.comment}>
+          {dynamic({
+            app: ({ app }) => app,
+            models: () => [
+              import("../../models/comment"),
+            ],
+            component: () => import("../Comment/Comment"),
+          })
+          }</div>)}
       </div>
     );
   }

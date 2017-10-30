@@ -16,6 +16,8 @@
 .card_hide{
     display: none;
 }
+
+
 .question_info {
     margin-top: -12px;
 }
@@ -27,4 +29,7 @@
 }
 .extra {
     color: #9fadc7;
+}
+.extra_hide {
+    opacity: 0;
 }

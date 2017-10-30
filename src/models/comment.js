@@ -1,4 +1,6 @@
 import queryString from 'query-string';
+import { Route, Link } from 'dva/router';
+
 import * as commentService from '../services/comment';
 
 export default {
@@ -26,7 +28,7 @@ export default {
       });
     },
     *reload(action, { put, select }) {
-      const page = yield select(state => state.topic.page);
+      const page = yield select(state => state.comment.page);
       yield put({ type: 'fetch', payload: { page } });
     },
   },
@@ -34,7 +36,7 @@ export default {
     setup({ dispatch, history }) {
       return history.listen(({ pathname, search }) => {
         const query = queryString.parse(search);
-        if (pathname === '/comments') {
+        if (pathname === 'comment') {
           dispatch({ type: 'fetch', payload: query });
         }
       });

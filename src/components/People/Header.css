@@ -1,0 +1,59 @@
+.card {
+    width: 1000px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+.content {
+    margin: 0px;
+
+}
+.cover {
+    height: 240px;
+    margin: -24px -32px 0 -32px;
+    background-color: #c4c4c4;
+}
+
+.avatar {
+    position: relative;
+    margin-top: -80px;
+    display: inline-block;
+}
+
+
+/* PhotoEdit */
+.wrap {
+    position: relative;
+    display: inline-block;
+}
+
+.avatar_photo {
+    position: relative;
+    height: 160px;
+    width: 160px;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: 0 0 0 6px #fff, 0 0 0 7px #ccc;
+}
+
+.avatar_edit {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    background: #000;
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+}
+.avatar_edit:hover {
+    opacity: 0.4;
+}
+
+/* FileUpload  */
+.input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}

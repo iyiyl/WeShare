@@ -13,7 +13,7 @@ export default class UserInfo extends Component {
   render() {
     const { uid, name, avatarUrl, description } = this.props.userData;
 
-    const hasDesc = this.props.hasDesc||false;
+    const hasDesc = this.props.hasDesc || false;
 
     const title = (
       <div className={styles.pop_title}>
@@ -57,11 +57,9 @@ export default class UserInfo extends Component {
       <div className={styles.user}>
         <Link to={`people/${uid}`} target="_blank">
           <Popover content={content} title={title} placement="bottomLeft">
-            <span>
-              <Avatar src={avatarUrl} shape="square" />
-              <span className={styles.user_name}>{name}</span>
-            </span>
+            <Avatar src={avatarUrl} shape="square" />
           </Popover>
+          <span className={styles.user_name}>{name}</span>
         </Link>
         {hasDesc ? <span className={styles.user_desc}>{description}</span> : null}
       </div>

@@ -25,7 +25,7 @@ function renderTitle(title) {
       {title}
       <a
         style={{ float: 'right' }}
-        href="https://www.google.com/search?q=antd"
+        href="https://www.baidu.com/search?q=antd"
         target="_blank"
         rel="noopener noreferrer"
       >更多

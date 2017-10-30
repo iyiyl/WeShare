@@ -44,7 +44,7 @@ class TopicCard extends Component {
     const cardTitleNode = <Link to={`question/${qid}`} className={styles.question_title} target="_blank"><span>{title}</span></Link>;
 
     const extraNode = <div className={classNames({
-      [`${styles.card_hide}`]: !this.state.extraNode_visible
+      [`${styles.extra_hide}`]: !this.state.extraNode_visible
     })}> <Tooltip placement="bottom" title="不感兴趣"><Button icon="close" size="large" className={`${styles.btn_plain} ${styles.extra}`} onClick={this.cardHide}></Button></Tooltip></div>;
 
     return (
