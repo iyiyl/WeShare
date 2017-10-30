@@ -1,7 +1,7 @@
 .card {
     width: 1000px;
     margin: 0 auto;
-    margin-bottom: 10px;
+    margin: 10px auto;
 }
 .content {
     margin: 0px;
@@ -13,16 +13,23 @@
     background-color: #c4c4c4;
 }
 
-.avatar {
+.main {
     position: relative;
-    margin-top: -80px;
+}
+
+.details {
     display: inline-block;
+    margin-left: 30px;
+    position: relative;
+    top: -20px;
 }
 
 
+
 /* PhotoEdit */
-.wrap {
+.avatar {
     position: relative;
+    margin-top: -80px;
     display: inline-block;
 }
 
@@ -41,12 +48,31 @@
     width: 100%;
     height: 100%;
     border-radius: 3px;
-    background: #000;
     opacity: 0;
     transition: opacity .2s ease-in-out;
 }
+
 .avatar_edit:hover {
-    opacity: 0.4;
+    opacity: 1;
+    background: rgba(0, 0, 0, .4);
+}
+
+.avatar_edit:after {
+    content:'修改我的头像';
+    position: absolute;
+    width: 100%;
+    bottom: 50px;
+    z-index: 243;
+    color: #fff;
+    text-align: center;
+}
+
+.camera {
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    color: #fff;
+    text-align: center;
 }
 
 /* FileUpload  */
@@ -57,3 +83,4 @@
     opacity: 0;
     cursor: pointer;
 }
+

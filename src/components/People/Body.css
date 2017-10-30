@@ -1,0 +1,17 @@
+.main {
+    width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+.left {
+    width: 694px;
+}
+
+.right {
+    width: 296px;
+}
+.card {
+    margin-bottom: 10px;
+}

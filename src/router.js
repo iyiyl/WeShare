@@ -30,6 +30,10 @@ function RouterConfig({ history, app }) {
     ],
     component: () => import("./components/Comment/Comment"),
   });
+  const People = dynamic({
+    app,
+    component: () => import("./routes/People"),
+  })
 
   return (
     <Router history={history}>
@@ -37,6 +41,7 @@ function RouterConfig({ history, app }) {
         <Route exact path="/" component={IndexPage} />
         <Route exact path="/users" component={Users} />
         <Route exact path="/topic" component={Topic} />
+        <Route exact path="/people/:id" component={People} />
         <Route path="/topic/comment" component={Comment} />
       </Switch>
     </Router>

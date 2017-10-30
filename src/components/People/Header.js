@@ -4,6 +4,7 @@ import { Card, Icon, Modal } from 'antd';
 import Cropper from "./lib/index";
 
 import styles from "./Header.css";
+import Body from "./Body";
 
 export default class Header extends Component {
   constructor(props) {
@@ -11,17 +12,28 @@ export default class Header extends Component {
   }
 
   render() {
-    return (<div>
-      <Card className={styles.card}>
-        <div className={styles.content}>
-          <div className={styles.cover}>
+    return (
+      <div>
+        <Card className={styles.card}>
+          <div className={styles.content}>
+            <div className={styles.cover}>
+            <img style={{width:1000,height:240}} src="https://pic2.zhimg.com/80/v2-e375dc638290635e783abea5ec9c43d1_r.jpg" />
+            </div>
+            <div className={styles.main}>
+              <div className={styles.avatar}>
+                <PhotoEdit />
+              </div>
+              <div className={styles.details}>
+                <h1><span>name</span></h1>
+                <div>个人资料</div>
+                <div></div>
+              </div>
+            </div>
+
           </div>
-          <div className={styles.avatar}>
-            <PhotoEdit />
-          </div>
-        </div>
-      </Card>
-      <Card className={styles.card}></Card></div>
+        </Card>
+        <Body />
+      </div>
     );
   }
 }
@@ -61,14 +73,16 @@ class PhotoEdit extends Component {
 
   render() {
     return (
-      <div className={styles.wrap}>
-        <div className={styles.avatar_photo}>
-          <div className={styles.avatar_edit}>
-            <Icon type="camera" />
-            <FileUpload handleFileChange={this.handleFileChange} />
+
+      <div className={styles.avatar_photo}>
+        <div className={styles.avatar_edit}>
+          <div className={styles.camera}>
+            <Icon type="camera" style={{ fontSize: 32, color: "white" }} />
           </div>
-          <img src={this.state.croppedImg} width="160" />
+          <FileUpload handleFileChange={this.handleFileChange} />
         </div>
+        <img src={this.state.croppedImg} width="160" />
+
         {this.state.modalVisible &&
           <Modal
             title="编辑头像"
@@ -90,7 +104,7 @@ class PhotoEdit extends Component {
             </div>
           </Modal>
         }
-      </div>
+      </div >
     );
   }
 }
