@@ -16,12 +16,12 @@ function RouterConfig({ history, app }) {
     component: () => import("./routes/Users"),
   });
 
-  const Topic = dynamic({
+  const TopicPage = dynamic({
     app,
     models: () => [
       import("./models/topic"),
     ],
-    component: () => import("./routes/Topic"),
+    component: () => import("./routes/TopicPage"),
   });
   const Comment = dynamic({
     app,
@@ -30,18 +30,23 @@ function RouterConfig({ history, app }) {
     ],
     component: () => import("./components/Comment/Comment"),
   });
-  const People = dynamic({
+  const PeoplePage = dynamic({
     app,
-    component: () => import("./routes/People"),
-  })
+    component: () => import("./routes/PeoplePage"),
+  });
+  const QuestionPage = dynamic({
+    app,
+    component: () => import("./routes/QuestionPage"),
+  });
 
   return (
     <Router history={history}>
       <Switch>
         <Route exact path="/" component={IndexPage} />
         <Route exact path="/users" component={Users} />
-        <Route exact path="/topic" component={Topic} />
-        <Route exact path="/people/:id" component={People} />
+        <Route exact path="/topic" component={TopicPage} />
+        <Route exact path="/people/:id" component={PeoplePage} />
+        <Route exact path="/question/:id" component={QuestionPage} />
         <Route path="/topic/comment" component={Comment} />
       </Switch>
     </Router>

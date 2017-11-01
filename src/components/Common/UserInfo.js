@@ -66,3 +66,12 @@ export default class UserInfo extends Component {
     );
   }
 }
+
+UserInfo.propTypes = {
+  userData: React.PropTypes.object.isRequired,
+  hasDesc: React.PropTypes.bool
+};
+
+UserInfo.defaultProps = {
+  hasDesc: false
+}

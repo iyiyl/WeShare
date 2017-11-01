@@ -110,16 +110,16 @@ export default class Content extends Component {
             )
           }
         </div>
-        {!this.state.commentToggle ? null : (<div className={styles.comment}>
-          {dynamic({
-            app: ({ app }) => app,
-            models: () => [
-              import("../../models/comment"),
-            ],
-            component: () => import("../Comment/Comment"),
-          })
-          }</div>)}
+        {!this.state.commentToggle ? null : (
+          <div className={styles.comment}>
+            <Comment />
+          </div>
+        )}
       </div>
     );
   }
+}
+
+Content.propTypes = {
+  article: React.PropTypes.object.isRequired
 }

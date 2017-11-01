@@ -1,0 +1,31 @@
+.all {
+    width: 1000px;
+    margin: 10px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.head {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.left {
+    width: 694px;
+}
+
+.right {
+    width: 296px;
+}
+
+
+/* Header */
+.wrap {
+    margin: -24px -32px;
+}
+
+.question {
+    width: 694px;
+    padding: 20px;
+}
