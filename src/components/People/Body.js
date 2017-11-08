@@ -6,7 +6,7 @@ const TabPane = Tabs.TabPane;
 
 export default class Body extends Component {
   constructor(props) {
-    super();
+    super(props);
   }
 
   render() {

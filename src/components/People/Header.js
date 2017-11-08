@@ -8,7 +8,7 @@ import Body from "./Body";
 
 export default class Header extends Component {
   constructor(props) {
-    super();
+    super(props);
   }
 
   render() {

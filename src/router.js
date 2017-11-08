@@ -38,6 +38,10 @@ function RouterConfig({ history, app }) {
     app,
     component: () => import("./routes/QuestionPage"),
   });
+  const LoginPage = dynamic({
+    app,
+    component: () =>  import("./routes/LoginPage"),
+  });
 
   return (
     <Router history={history}>
@@ -48,6 +52,7 @@ function RouterConfig({ history, app }) {
         <Route exact path="/people/:id" component={PeoplePage} />
         <Route exact path="/question/:id" component={QuestionPage} />
         <Route path="/topic/comment" component={Comment} />
+        <Route exact path="/login" component={LoginPage} />
       </Switch>
     </Router>
   );

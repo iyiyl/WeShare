@@ -26,8 +26,8 @@ class TopicCard extends Component {
 
   extraNodeVisible = (e) => {
     if (e) e.stopPropagation();
-    this.setState({
-      extraNode_visible: !this.state.extraNode_visible,
+    this.setState(prevState => {
+      extraNode_visible: !prevState.extraNode_visible
     });
   };
 

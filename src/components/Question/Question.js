@@ -5,7 +5,7 @@ import styles from "./Question.css";
 
 export default class Question extends Component {
   constructor(props) {
-    super();
+    super(props);
 
   }
 

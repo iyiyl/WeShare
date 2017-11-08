@@ -1,6 +1,7 @@
 
-html, body, :global(#root) {
-  height: auto;
+html, body {
+    height: auto;
+    min-height: 100vh;
 }
 
 
